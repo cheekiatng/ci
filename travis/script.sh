@@ -5,6 +5,17 @@ STATUS=0
 
 # IF top-level build file, run that
 if [ -e "$MODULE_ROOT/build.sh" ]; then
+
+	  cp $MODULE_ROOT/build.properties $MODULE_ROOT/android/build.properties
+	  cat $MODULE_ROOT/android/build.properties
+	  
+	  # if lib folder doesn't exist, create it
+	  mkdir -p $MODULE_ROOT/android/lib
+	  # if build folder doesn't exist, create it
+	  mkdir -p $MODULE_ROOT/android/build
+	  # if build/docs folder doesn't exist, create it
+	  mkdir -p $MODULE_ROOT/android/build/docs
+	
 	./build.sh
 else
 	# If iOS module exists, build
