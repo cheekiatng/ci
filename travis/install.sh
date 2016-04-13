@@ -96,8 +96,7 @@ if [ -d "$MODULE_ROOT/android/" ]; then
 
   # Install required Android components.
   echo yes | android -s update sdk --no-ui --all --filter \
-    tools,platform-tools,extra-android-support,android-8,android-10,android-$TITANIUM_ANDROID_API,addon-google_apis-google-$TITANIUM_ANDROID_API
-    
+  tools,platform-tools,build-tools-$TITANIUM_ANDROID_API.0.0,extra-android-support,android-22,android-$TITANIUM_ANDROID_API,addon-google_apis-google-$TITANIUM_ANDROID_API
   # NDK r8c
   echo
   echo "Checking existance of $MODULE_ROOT/android-ndk-r8c"
@@ -129,6 +128,16 @@ if [ -d "$MODULE_ROOT/android/" ]; then
   echo "titanium.platform=$TITANIUM_SDK/android" > $MODULE_ROOT/build.properties
   echo "android.platform=$ANDROID_HOME/platforms/android-$TITANIUM_ANDROID_API" >> $MODULE_ROOT/build.properties
   echo "google.apis=$ANDROID_HOME/add-ons/addon-google_apis-google-$TITANIUM_ANDROID_API" >> $MODULE_ROOT/build.properties
+
+  cp $MODULE_ROOT/build.properties $MODULE_ROOT/android/build.properties
+  cat $MODULE_ROOT/android/build.properties
+    
+  # if lib folder doesn't exist, create it
+  mkdir -p $MODULE_ROOT/android/lib
+  # if build folder doesn't exist, create it
+  mkdir -p $MODULE_ROOT/android/build
+  # if build/docs folder doesn't exist, create it
+  mkdir -p $MODULE_ROOT/android/build/docs
 
 fi
 
