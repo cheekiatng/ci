@@ -15,9 +15,6 @@ else
 		echo "Building iOS version"
 		echo
 	
-		cd $MODULE_ROOT/ios/
-		cp $MODULE_ROOT/titanium.xcconfig titanium.xcconfig
-		cat titanium.xcconfig
 		./build.py
 	
 		let STATUS=$?
