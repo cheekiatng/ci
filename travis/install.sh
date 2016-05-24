@@ -42,6 +42,7 @@ done
 brew update
 brew install jq # process JSON
 # need to use node 4.4.4 for now
+brew unlink node
 brew install https://raw.github.com/Homebrew/homebrew-versions/master/node4-lts.rb
 
 sudo npm install -g titanium
