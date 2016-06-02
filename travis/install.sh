@@ -102,7 +102,7 @@ if [ -d "$MODULE_ROOT/android/" ]; then
   echo yes | android -s update sdk --no-ui --all --filter addon-google_apis-google-$TITANIUM_ANDROID_API
   echo yes | android -s update sdk --no-ui --all --filter tools
   echo yes | android -s update sdk --no-ui --all --filter platform-tools
-  echo yes | android -s update sdk --no-ui --all --filter build-tools-$TITANIUM_ANDROID_API.0.3
+  echo yes | android -s update sdk --no-ui --all --filter build-tools-$TITANIUM_ANDROID_API.0.0
   echo yes | android -s update sdk --no-ui --all --filter extra-android-support
   # NDK r8c
   echo
